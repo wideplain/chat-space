@@ -17,12 +17,11 @@
 | -------- | ------- | ------------------------------ |
 | email    | string  | null: false, unique: true      |
 | password | string  | null: false                    |
-| name     | string  | null: false, unique: true      |
-| group_id | integer | null: false, foreign_key: true |
+| name     | string  | null: false, unique: true, index: true|
 ### association
 - has_many :groups, thorough: :members
 - has_many :messages
-- has_many :members
+- has_many :group_users
 
 ## groups table
 | Column | Type   | Options                   |
@@ -31,9 +30,9 @@
 ### association
 - has_many :users, through: :members
 - has_many :messages
-- has_many :menbers
+- has_many :group_users
 
-## menbers table
+## group_users table
 | Column   | Type    | Options                        |
 | -------- | ------- | ------------------------------ |
 | user_id  | integer | null: false, foreign_key: true |
