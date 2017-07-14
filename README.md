@@ -19,7 +19,7 @@
 | password | string  | null: false                    |
 | name     | string  | null: false, unique: true, index: true|
 ### association
-- has_many :groups, thorough: :members
+- has_many :groups, thorough: :group_users
 - has_many :messages
 - has_many :group_users
 
@@ -28,7 +28,7 @@
 | ------ | ------ | ------------------------- |
 | name   | string | null: false, unique: true |
 ### association
-- has_many :users, through: :members
+- has_many :users, through: :group_users
 - has_many :messages
 - has_many :group_users
 
