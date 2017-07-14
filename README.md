@@ -1,24 +1,42 @@
-# README
+**ChatSpace**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# データベース設計
+## messages table
+| Column   | Type    | Options                        |
+| -------- | ------- | ------------------------------ |
+| user_id  | integer | null: false, foreign_key: true |
+| group_id | integer | null: false, foreign_key: true |
+| body     | text    |                                |
+| image    | string  |                                |
+### association
+- belongs_to :user
+- belongs_to :group
 
-Things you may want to cover:
+## users table
+| Column   | Type    | Options                        |
+| -------- | ------- | ------------------------------ |
+| email    | string  | null: false, unique: true      |
+| password | string  | null: false                    |
+| name     | string  | null: false, unique: true, index: true|
+### association
+- has_many :groups, thorough: :group_users
+- has_many :messages
+- has_many :group_users
 
-* Ruby version
+## groups table
+| Column | Type   | Options                   |
+| ------ | ------ | ------------------------- |
+| name   | string | null: false, unique: true |
+### association
+- has_many :users, through: :group_users
+- has_many :messages
+- has_many :group_users
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## group_users table
+| Column   | Type    | Options                        |
+| -------- | ------- | ------------------------------ |
+| user_id  | integer | null: false, foreign_key: true |
+| group_id | integer | null: false, foreign_key: true |
+### association
+- belongs_to :group
+- belongs_to :user
