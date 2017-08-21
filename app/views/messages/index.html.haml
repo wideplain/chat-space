@@ -1,5 +1,5 @@
 .contents
-  .sidebar.font_white
+  .sidebar
     .header
       %h3 Username
       %ul.header__lists
@@ -25,70 +25,100 @@
       .header__left
         .header__left--title
           GroupName
-        %ul.header__left--members.font_light_gray
+        %ul.header__left--members
           Member：
           %li.member name
       .header__right
-        %button.header__right--button{:name => "edit", :onclick => "location.href='/groups/id/edit'", :type => "button"} Edit
+        %button.header__right--button{name: "edit", onclick: "location.href='/groups/id/edit'", type: "button"} Edit
     .messages
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
       .message
         .message--info
-          .message__username.font_gray Username
-          .message__data.font_light_gray 2017/08/11
-        .message__sentence.font_gray
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
           %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
     .form
       %form#new_message.new-message
-        %input.form__message.font_gray{:placeholder => "type a message"}/
+        %input.form__message{placeholder: "type a message"}/
         .photo-upload
           %label.photo-upload__label
             %i.fa.fa-picture-o{"aria-hidden" => "true"}
-        %input.form__submit{:type => "submit", :value => "Send"}/
+        %input.form__submit{type: "submit", value: "Send"}/
