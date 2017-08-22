@@ -59,3 +59,5 @@ group :development do
   gem 'haml-rails'
   gem 'erb2haml'
 end
+
+gem 'devise'
