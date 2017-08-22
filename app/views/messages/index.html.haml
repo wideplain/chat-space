@@ -1,0 +1,124 @@
+.contents
+  .sidebar
+    .header
+      %h3 Username
+      %ul.header__lists
+        %li.list
+          %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        %li.list
+          %i.fa.fa-cog{"aria-hidden" => "true"}
+    .groups
+      .group
+        .group__name GroupName
+        .group__activity
+          まだメッセージはありません
+      .group
+        .group__name GroupName1
+        .group__activity
+          まだメッセージはありません
+      .group
+        .group__name GroupName2
+        .group__activity
+          まだメッセージはありません
+  .chat
+    .header
+      .header__left
+        .header__left--title
+          GroupName
+        %ul.header__left--members
+          Member：
+          %li.member name
+      .header__right
+        %button.header__right--button{name: "edit", onclick: "location.href='/groups/id/edit'", type: "button"} Edit
+    .messages
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+      .message
+        .message--info
+          .message__username Username
+          .message__data 2017/08/11
+        .message__sentence
+          %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+    .form
+      %form#new_message.new-message
+        %input.form__message{placeholder: "type a message"}/
+        .photo-upload
+          %label.photo-upload__label
+            %i.fa.fa-picture-o{"aria-hidden" => "true"}
+        %input.form__submit{type: "submit", value: "Send"}/
