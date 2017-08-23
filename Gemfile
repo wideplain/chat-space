@@ -60,4 +60,4 @@ group :development do
   gem 'erb2haml'
 end
 
-gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'devise'
