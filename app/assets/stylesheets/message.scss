@@ -17,6 +17,9 @@
       float: right;
       .list {
       display: inline-block;
+      i {
+        color: $font_white;
+        }
       }
     }
     h3 {
