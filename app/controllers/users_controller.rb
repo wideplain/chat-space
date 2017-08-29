@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    redirect_to root_path
+    if current_user.update_attributes(user_params)
+      redirect_to root_path
+    else
+      redirect_to edit_user_path
+    end
   end
 
   private
