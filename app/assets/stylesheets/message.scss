@@ -6,7 +6,7 @@
   background-color: #2f3e51;
   width: 300px;
   box-sizing: border-box;
-  color: $font_white;
+  color: $white;
   .header {
     padding: 0 20px 0 20px;
     height: 100px;
@@ -18,7 +18,7 @@
       .list {
       display: inline-block;
       i {
-        color: $font_white;
+        color: $white;
         }
       }
     }
@@ -62,7 +62,7 @@
         padding-top: 15px;
         display: flex;
         font-size: 12px;
-        color: $font_light_gray;
+        color: $light_gray;
       }
     }
     &__right {
@@ -95,17 +95,17 @@
           margin-right: 10px;
           font-weight: bold;
           font-size: 16px;
-          color: $font_gray;
+          color: $gray;
         }
         .message__data {
           font-size: 12px;
-          color: $font_light_gray;
+          color: $light_gray;
         }
       }
       &__sentence {
         p {
         font-size: 14px;
-        color: $font_gray;
+        color: $gray;
        }
       }
     }
@@ -122,7 +122,7 @@
       width: calc(100% - 150px);
       border: none;
       box-sizing: border-box;
-      color: $font_gray;
+      color: $gray;
     }
     .photo-upload {
       float: left;
