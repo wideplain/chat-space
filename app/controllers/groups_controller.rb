@@ -6,9 +6,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    # binding.pry
     @group.save
-    # redirect_to group_messages_path, action: :get
+    redirect_to root_path
   end
 
   def edit
