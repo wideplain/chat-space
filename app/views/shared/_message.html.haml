@@ -1,6 +1,9 @@
 .message
   .message--info
-    .message__username Username
-    .message__data 2017/08/11
+    .message__username
+      #{message.user.name}
+    .message__data
+      #{message.created_at.strftime('%Y/%m/%d %H:%M')}
   .message__sentence
-    %p.sentence いいいいいいいいいいいいいいいいいいいいいいいいい
+    %p.sentence
+      #{message.body}

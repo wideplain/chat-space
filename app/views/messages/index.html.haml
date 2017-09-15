@@ -1,13 +1,8 @@
 .contents
-  = render partial: "shared/sidebar", locals: { groups: @groups }
+  = render partial: "shared/sidebar", locals: {groups: @groups}
   .chat
     = render partial: "shared/header", locals: {group: @group}
     .messages
-      = render partial: "shared/message"
-    .form
-      %form#new_message.new-message
-        %input.form__message{placeholder: "type a message"}/
-        .photo-upload
-          %label.photo-upload__label
-            %i.fa.fa-picture-o{"aria-hidden" => "true"}
-        %input.form__submit{type: "submit", value: "Send"}/
+      - @group.messages.each do |message|
+        = render partial: "shared/message", locals: {message: message}
+    = render partial: "shared/form"
