@@ -1,7 +1,7 @@
 .contents
   = render partial: "shared/sidebar", locals: { groups: @groups }
   .chat
-    = render partial: "shared/header", locals: {group: @group}
+    = render partial: "shared/chat_header", locals: {group: @group}
     .messages
       .message
         .message--info
