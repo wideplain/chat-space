@@ -1,0 +1,14 @@
+.sidebar
+  .header
+    %h3
+      #{current_user.name}
+    %ul.header__lists
+      %li.list
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      %li.list
+        = link_to edit_user_path(current_user.id) do
+          %i.fa.fa-cog{"aria-hidden" => "true"}
+  .groups
+    - groups.each do |group|
+      = render partial: 'shared/group_info', locals: { group: group }

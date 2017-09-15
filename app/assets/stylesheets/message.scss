@@ -6,7 +6,7 @@
   background-color: #2f3e51;
   width: 300px;
   box-sizing: border-box;
-  color: $white;
+  color: white;
   .header {
     padding: 0 20px 0 20px;
     height: 100px;
@@ -18,7 +18,7 @@
       .list {
       display: inline-block;
       i {
-        color: $white;
+        color: white;
         }
       }
     }
@@ -32,8 +32,10 @@
   .groups {
     padding: 0 20px;
     height: calc(100vh - 100px);
+    color: white;
     .group {
       padding: 20px 0;
+      color: white;
       &__name {
       font-size: 15px;
       margin-bottom: 5px;

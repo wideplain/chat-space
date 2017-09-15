@@ -1,0 +1,11 @@
+.header
+  .header__left
+    .header__left--title
+      #{group.name}
+    %ul.header__left--members
+      Member：
+      - group.users.each do |user|
+        %li.member
+          #{user.name + "　"}
+  .header__right
+    = button_to 'edit', edit_group_path(group), method: :get, class: "header__right--button"
