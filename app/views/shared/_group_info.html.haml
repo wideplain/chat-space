@@ -1,5 +1,6 @@
-.group
-  .group__name
-    =link_to "#{group.name}"
-  .group__activity
-    まだメッセージはありません
+= link_to group_messages_path(group) do
+  .group
+    .group__name
+      #{group.name}
+    .group__activity
+      まだメッセージはありません
