@@ -10,10 +10,15 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.save
-      user_ids_validates
+    if @group.user_ids.any?
+      if @group.save
+        redirect_to root_path, notice: 'グループが更新されました'
+      else
+        flash[:alert] = 'グループが作成されませんでした'
+        render :new
+      end
     else
-      flash[:alert] = 'グループが作成されませんでした'
+      flash[:alert] = 'ユーザーが選択されていません'
       render :new
     end
   end
@@ -24,10 +29,15 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    if @group.update(group_params)
-      user_ids_validates
+     if group_params[:user_ids].any? {|w| w.size > 0 }
+      if @group.update(group_params)
+        redirect_to root_path, notice: 'グループが更新されました'
+      else
+        flash[:alert] = 'グループが作成されませんでした'
+        render :edit
+      end
     else
-      flash[:alert] = 'グループが更新されませんでした'
+      flash[:alert] = 'ユーザーが選択されていません'
       render :edit
     end
   end
@@ -36,14 +46,5 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, user_ids:[])
-  end
-
-  def user_ids_validates
-    if @group.user_ids.any?
-        redirect_to root_path, notice: 'グループが更新されました'
-    else
-      flash[:alert] = 'ユーザーが選択されていません'
-      render :new
-    end
   end
 end
