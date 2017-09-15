@@ -1,0 +1,10 @@
+.header
+  .header__left
+    .header__left--title
+      #{group.name}
+    %ul.header__left--members
+      Member：
+      - users.each do |user|
+        %li.member #{user.name + "　"}
+  .header__right
+    %button.header__right--button{name: "edit", onclick: "location.href='/groups/id/edit'", type: "button"} Edit

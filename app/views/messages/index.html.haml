@@ -1,15 +1,7 @@
 .contents
   = render partial: "shared/sidebar", locals: { groups: @groups }
   .chat
-    .header
-      .header__left
-        .header__left--title
-          GroupName
-        %ul.header__left--members
-          Member：
-          %li.member name
-      .header__right
-        %button.header__right--button{name: "edit", onclick: "location.href='/groups/id/edit'", type: "button"} Edit
+    = render partial: "shared/header", locals: {users: @users, group: @group}
     .messages
       .message
         .message--info
