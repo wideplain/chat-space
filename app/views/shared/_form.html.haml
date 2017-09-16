@@ -1,7 +1,8 @@
 .form
   %form#new_message.new-message
-    %input.form__message{placeholder: "type a message"}/
-    .photo-upload
-      %label.photo-upload__label
-        %i.fa.fa-picture-o{"aria-hidden" => "true"}
-    %input.form__submit{type: "submit", value: "Send"}/
+    = form_for(@message, @group) do |f|
+      = f.label :message, "type a message", class: "form__message"
+      .photo-upload
+        %label.photo-upload__label
+          %i.fa.fa-picture-o{"aria-hidden" => "true"}
+      = f.submit 'Sent', class: "form__submit"
