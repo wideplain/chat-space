@@ -10,10 +10,15 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.save
-      redirect_to root_path, notice: 'グループが作成されました'
+    if @group.user_ids.any?
+      if @group.save
+        redirect_to root_path, notice: 'グループが更新されました'
+      else
+        flash[:alert] = 'グループが作成されませんでした'
+        render :new
+      end
     else
-      flash[:alert] = 'グループが作成されませんでした'
+      flash[:alert] = 'ユーザーが選択されていません'
       render :new
     end
   end
@@ -24,10 +29,15 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    if @group.update(group_params)
-      redirect_to root_path, notice: 'グループ情報が更新されました'
+     if group_params[:user_ids].last.present?
+      if @group.update(group_params)
+        redirect_to root_path, notice: 'グループが更新されました'
+      else
+        flash[:alert] = 'グループが作成されませんでした'
+        render :edit
+      end
     else
-      flash[:alert] = 'グループが更新されませんでした'
+      flash[:alert] = 'ユーザーが選択されていません'
       render :edit
     end
   end
