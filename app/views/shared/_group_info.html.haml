@@ -3,4 +3,7 @@
     .group__name
       #{group.name}
     .group__activity
-      まだメッセージはありません
+      - if group.messages.last.present?
+        #{group.messages.last.body}
+      - else
+        メッセージがありません

@@ -1,8 +1,0 @@
-.form
-  %form#new_message.new-message
-    = form_for(@message, @group) do |f|
-      = f.label :message, "type a message", class: "form__message"
-      .photo-upload
-        %label.photo-upload__label
-          %i.fa.fa-picture-o{"aria-hidden" => "true"}
-      = f.submit 'Sent', class: "form__submit"
