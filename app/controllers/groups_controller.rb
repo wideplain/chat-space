@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-     if group_params[:user_ids].length > 1
+     if group_params[:user_ids].last.present?
       if @group.update(group_params)
         redirect_to root_path, notice: 'グループが更新されました'
       else
