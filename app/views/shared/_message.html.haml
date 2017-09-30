@@ -1,9 +1,9 @@
 .message
   .message--info
     .message__username
-      #{message.user.name}
+      #{ message.user.name }
     .message__data
-      #{I18n.l(message.created_at, format: :short)}
+      #{ message.created_at }
   .message__sentence
     %p.sentence
-      #{message.body}
+      #{ message.body }
