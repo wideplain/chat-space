@@ -10,18 +10,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    if message_params[:body].present?
-      @message = Message.create(message_params)
-      redirect_to group_messages_path, notice: 'メッセージが投稿されました'
-    else
-      redirect_to group_messages_path, alert: 'メッセージを入力してください'
-    end
+    @message = Message.create(message_params)
+    redirect_to group_messages_path #render :indexだとNoMethodErrorエラーが出る
   end
 
 
   private
 
   def message_params
-    params.require(:message).permit(:body).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:body, :user_id).merge(group_id: params[:group_id])
   end
 end

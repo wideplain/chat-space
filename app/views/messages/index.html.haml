@@ -1,7 +1,7 @@
 .contents
-  = render partial: "shared/sidebar", locals: {groups: @groups}
+  = render partial: "shared/sidebar", locals: { groups: @groups }
   .chat
-    = render partial: "shared/header", locals: {group: @group}
+    = render partial: "shared/header", locals: { group: @group }
     .messages
       - @group.messages.each do |message|
         = render partial: "shared/message", locals: {message: message}

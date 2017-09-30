@@ -5,4 +5,5 @@
       .photo-upload
         %label.photo-upload__label
           %i.fa.fa-picture-o{"aria-hidden" => "true"}
+      = f.hidden_field :user_id, value: current_user.id
       = f.submit 'Sent', class: "form__submit"

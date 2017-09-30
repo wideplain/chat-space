@@ -200,5 +200,11 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      short: "%y/%m/%d %H:%M"
+      short: "%Y/%m/%d %H:%M"
     pm: 午後
+  activerecorde:
+  attributes:
+    message:
+      body: メッセージ
+      image: イメージ
+      email_or_phone: メッセージまたはイメージ
