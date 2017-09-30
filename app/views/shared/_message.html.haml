@@ -3,7 +3,7 @@
     .message__username
       #{ message.user.name }
     .message__data
-      #{ message.created_at }
+      #{ l(message.created_at) }
   .message__sentence
     %p.sentence
       #{ message.body }
