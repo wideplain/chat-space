@@ -1,9 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :index_method, except: :new
+  before_action :index_method, only: [:index, :create]
   def index
-  end
-
-  def new
   end
 
   def create
