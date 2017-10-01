@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :index_method
+  before_action :index_method, except: :new
   def index
   end
 
