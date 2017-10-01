@@ -1,20 +1,20 @@
 class MessagesController < ApplicationController
   def index
-    @groups = current_user.groups
-    @group = Group.includes(:users, :messages).find(params[:group_id])
-    @message = Message.new
+    index_method
   end
 
   def new
-
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path #render :indexだとNoMethoderror
+      index_method
+      render :index
     else
-      redirect_to group_messages_path, alert: 'メッセージを入力してください'
+      index_method
+      render :index
+      flash[:alert] = 'メッセージを入力してください'
     end
   end
 
@@ -23,5 +23,11 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:body, :user_id, :image).merge(group_id: params[:group_id])
+  end
+
+  def index_method
+    @groups = current_user.groups
+    @group = Group.includes(:users, :messages).find(params[:group_id])
+    @message = Message.new
   end
 end
