@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :index_method
   def index
-    index_method
   end
 
   def new
@@ -9,10 +9,8 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.new(message_params)
     if @message.save
-      index_method
-      render :index
+      redirect_to group_messages_path
     else
-      index_method
       render :index
       flash[:alert] = 'メッセージを入力してください'
     end
