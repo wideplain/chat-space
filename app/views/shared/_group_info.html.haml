@@ -1,6 +1,12 @@
 = link_to group_messages_path(group) do
   .group
     .group__name
-      #{group.name}
+      #{ group.name }
     .group__activity
-      まだメッセージはありません
+      - if group.messages.last.present?
+        - if group.messages.last.body.present?
+          #{ group.messages.last.body }
+        - else
+          画像が送信されました
+      - else
+        メッセージがありません
